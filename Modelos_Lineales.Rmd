@@ -36,6 +36,7 @@ Sin embargo para proceder con métodos de modelos lineales debemos de cumplir co
 
 ## Exploración de datos:
 
+Leer articulo adjunto en el repositorio
 
 
 
