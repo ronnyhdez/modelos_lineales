@@ -1,0 +1,41 @@
+---
+title: "Modelos Lineales"
+author: "ronny hdez_mora"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: 
+    html_document:
+        toc: true
+        toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# ¿Qué son modelos lineales?
+
+De manera mega resumida y como su palabra lo dice, son métodos que utilizamos para modelar la relación entre una variable respuesta numérica y sus predictores numéricos o categóricos.
+
+En este caso, modelar implica dar un paso más allá y movernos de describir relaciones entre variables a tratar de predecir comportamientos de los datos.
+
+## ¿Qué hay con los modelos lineales generalizados?
+
+Los modelos lineales como las regresiones, ANOVAS, ANCOVAS son usados para predecir una variable respuesta (lo que va en el eje Y) con distribución normal a partir de un conjunto de variables predictivas (lo que va en el eje X) continuas o categóricas
+
+## Entonces, ¿Qué vamos a ver en este tutorial?
+
+> La exploración de datos para confirmar supuestos.
+> Regresión
+> Tal vez ANOVA & ANCOVA
+
+# ¿Qué hago primero?
+
+Se parte del hecho que ya los datos tomados vienen con un diseño experimental pensado previo al análisis y que por ende las relaciones entre las variables se encuentran dadas al menos en el diseño.
+
+Sin embargo para proceder con métodos de modelos lineales debemos de cumplir con ciertos supuestos que son los que verificaremos con la exploración de datos.
+
+## Exploración de datos:
+
+
+
+
