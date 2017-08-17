@@ -10,6 +10,8 @@ Si desea tener una copia de este material para su uso durante los talleres o fue
 
 * **Ronny Hdez** - [ronnyhdez](https://github.com/ronnyhdez)
 * **Álvaro Vega** - [alvarovegahd](https://github.com/alvarovegahd)
+
+
 Aún no tenemos contribuyentes al repositorio pero en cuanto tengamos participantes los estaremos agregando [acá](https://github.com/your/project/contributors) 
 
 ## License
