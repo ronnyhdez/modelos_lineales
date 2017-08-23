@@ -10,7 +10,10 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
 ```
+
+Hay muchos modelos,no todos los modelos ciertos etc ...poner esa cita.
 
 # ¿Qué son modelos lineales?
 
@@ -24,9 +27,9 @@ Los modelos lineales como las regresiones, ANOVAS, ANCOVAS son usados para prede
 
 ## Entonces, ¿Qué vamos a ver en este tutorial?
 
-> La exploración de datos para confirmar supuestos.
-> Regresión
-> Tal vez ANOVA & ANCOVA
+* La exploración de datos para confirmar supuestos.
+* Regresión
+* Tal vez ANOVA & ANCOVA
 
 # ¿Qué hago primero?
 
@@ -36,7 +39,75 @@ Sin embargo para proceder con métodos de modelos lineales debemos de cumplir co
 
 ## Exploración de datos:
 
-Leer articulo adjunto en el repositorio
+Podemos revisar el set de datos:
+
+```{r}
+str(iris)
+```
+
+Hacer un gráfico para revisar alguna relación:
+
+```{r}
+plot_1 <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) + 
+        geom_point() +
+        geom_smooth(method = lm)
+```
+
+## Construcción del modelo:
+
+Vamos a utilizar un set de datos que se llama iris. Si quieren ver cuáles datasets vienen en la base de R pueden correr el comando.
+
+```{r}
+data()
+```
+
+Acá, para llamar a iris, lo podemos hacer un objeto:
+
+```{r}
+lm(iris$Sepal.Length ~ iris$Petal.Length)
+```
+
+Lo anterior nos dará los coeficientes del modelo, por lo qué, es mejor hacer el modelo un objetivo definido en nuestro entorno y luego aplicarle una función de resumen:
+
+```{r}
+modelo_1 <- lm(iris$Sepal.Length ~ iris$Petal.Length)
+summary(modelo_1)
+```
+
+
+* Ecuación del modelo:
+
+__Sepal.Length = 4.30 + 0.40 * Petal.Length__
+
+
+## Verificación supuestos del modelo
+
+Para poder confiar en nuestro modelo, debemos de corroborar los supuestos, como:
+
+-Independencia
+-Homocedasticidad
+-Normalidad.
+
+Si ya tenemos el modelo como un objeto, podemos hacer unos gráficos como herramienta para 
+
+```{r}
+par(mcol = c(2,2))
+plot(modelo_1)
+```
+
+## Visualización del modelo construido:
+
+```{r}
+theme_set(theme_bw(base_size = 26)) # Para configurar tema del gráfico
+# Gráfico "más bonito"
+plot_1 + geom_point(shape = 19,size = 6,alpha = 0.6, 
+                    colour = "black") +
+        scale_colour_hue(l = 50) +
+        labs(x = "Sepal Length (cm)",y = "Pethal Length (cm)") +
+        geom_smooth(method = lm,   
+                se = FALSE,    
+                fullrange = FALSE,colour = "red",alpha = 0.1, size = 1.5)
+```
 
 
 
